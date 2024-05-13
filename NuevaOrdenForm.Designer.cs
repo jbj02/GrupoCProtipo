@@ -212,6 +212,7 @@
             label1.Size = new Size(113, 15);
             label1.TabIndex = 39;
             label1.Text = "N° de Orden Interna";
+            label1.Click += label1_Click;
             // 
             // NuevaOrdenForm
             // 

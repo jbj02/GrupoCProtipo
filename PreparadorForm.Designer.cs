@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            N_Orden_Ext = new ColumnHeader();
+            OrdenExt_List = new ListView();
+            Num_Orden_Ext = new ColumnHeader();
             Tipo_Producto = new ColumnHeader();
             Cantidad = new ColumnHeader();
             Cliente = new ColumnHeader();
             Fecha_Creacion = new ColumnHeader();
-            listView2 = new ListView();
+            OrdenInt_List = new ListView();
             N_Orden_Ext2 = new ColumnHeader();
             N_Orden_Int = new ColumnHeader();
             Tipo_Producto2 = new ColumnHeader();
@@ -52,21 +52,22 @@
             button1 = new Button();
             SuspendLayout();
             // 
-            // listView1
+            // OrdenExt_List
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { N_Orden_Ext, Tipo_Producto, Cantidad, Cliente, Fecha_Creacion });
-            listView1.Location = new Point(116, 12);
-            listView1.MultiSelect = false;
-            listView1.Name = "listView1";
-            listView1.Size = new Size(604, 170);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            OrdenExt_List.Columns.AddRange(new ColumnHeader[] { Num_Orden_Ext, Tipo_Producto, Cantidad, Cliente, Fecha_Creacion });
+            OrdenExt_List.GridLines = true;
+            OrdenExt_List.Location = new Point(116, 12);
+            OrdenExt_List.MultiSelect = false;
+            OrdenExt_List.Name = "OrdenExt_List";
+            OrdenExt_List.Size = new Size(604, 170);
+            OrdenExt_List.TabIndex = 1;
+            OrdenExt_List.UseCompatibleStateImageBehavior = false;
+            OrdenExt_List.View = View.Details;
             // 
-            // N_Orden_Ext
+            // Num_Orden_Ext
             // 
-            N_Orden_Ext.Text = "N° Orden Ext";
-            N_Orden_Ext.Width = 120;
+            Num_Orden_Ext.Text = "N° Orden Ext";
+            Num_Orden_Ext.Width = 120;
             // 
             // Tipo_Producto
             // 
@@ -88,16 +89,17 @@
             Fecha_Creacion.Text = "Fecha de Creación";
             Fecha_Creacion.Width = 120;
             // 
-            // listView2
+            // OrdenInt_List
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { N_Orden_Ext2, N_Orden_Int, Tipo_Producto2, Cantidades2, Cliente2, Estado, Listo_Para_Entrega, Fecha_Creacion2, Fecha_Modificacion });
-            listView2.Location = new Point(14, 243);
-            listView2.MultiSelect = false;
-            listView2.Name = "listView2";
-            listView2.Size = new Size(816, 170);
-            listView2.TabIndex = 2;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            OrdenInt_List.Columns.AddRange(new ColumnHeader[] { N_Orden_Ext2, N_Orden_Int, Tipo_Producto2, Cantidades2, Cliente2, Estado, Listo_Para_Entrega, Fecha_Creacion2, Fecha_Modificacion });
+            OrdenInt_List.GridLines = true;
+            OrdenInt_List.Location = new Point(14, 243);
+            OrdenInt_List.MultiSelect = false;
+            OrdenInt_List.Name = "OrdenInt_List";
+            OrdenInt_List.Size = new Size(895, 170);
+            OrdenInt_List.TabIndex = 2;
+            OrdenInt_List.UseCompatibleStateImageBehavior = false;
+            OrdenInt_List.View = View.Details;
             // 
             // N_Orden_Ext2
             // 
@@ -122,11 +124,12 @@
             // Cliente2
             // 
             Cliente2.Text = "Cliente";
-            Cliente2.Width = 80;
+            Cliente2.Width = 120;
             // 
             // Estado
             // 
             Estado.Text = "Estado";
+            Estado.Width = 100;
             // 
             // Listo_Para_Entrega
             // 
@@ -151,6 +154,7 @@
             Nueva_Orden.TabIndex = 3;
             Nueva_Orden.Text = "Nueva Orden";
             Nueva_Orden.UseVisualStyleBackColor = true;
+            Nueva_Orden.Click += Nueva_Orden_Click;
             // 
             // Actualizar
             // 
@@ -201,29 +205,30 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 450);
+            ClientSize = new Size(968, 450);
             Controls.Add(button1);
             Controls.Add(Cancelar);
             Controls.Add(Buscar);
             Controls.Add(Modificar);
             Controls.Add(Actualizar);
             Controls.Add(Nueva_Orden);
-            Controls.Add(listView2);
-            Controls.Add(listView1);
+            Controls.Add(OrdenInt_List);
+            Controls.Add(OrdenExt_List);
             Name = "PreparadorForm";
-            Text = "A";
+            Text = "PreparadorForm";
+            Load += PreparadorForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListView listView1;
-        private ColumnHeader N_Orden_Ext;
+        private ListView OrdenExt_List;
+        private ColumnHeader Num_Orden_Ext;
         private ColumnHeader Tipo_Producto;
         private ColumnHeader Cantidad;
         private ColumnHeader Cliente;
         private ColumnHeader Fecha_Creacion;
-        private ListView listView2;
+        private ListView OrdenInt_List;
         private ColumnHeader N_Orden_Ext2;
         private ColumnHeader N_Orden_Int;
         private ColumnHeader Tipo_Producto2;
