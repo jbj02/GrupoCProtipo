@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            NumeroOrdenInternaText = new TextBox();
             label1 = new Label();
             CancelarBoton = new Button();
+            AceptarBoton = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // NumeroOrdenInternaText
             // 
-            textBox1.Location = new Point(187, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(131, 23);
-            textBox1.TabIndex = 0;
+            NumeroOrdenInternaText.Location = new Point(187, 35);
+            NumeroOrdenInternaText.Name = "NumeroOrdenInternaText";
+            NumeroOrdenInternaText.Size = new Size(131, 23);
+            NumeroOrdenInternaText.TabIndex = 0;
             // 
             // label1
             // 
@@ -52,7 +53,7 @@
             // 
             // CancelarBoton
             // 
-            CancelarBoton.Location = new Point(187, 67);
+            CancelarBoton.Location = new Point(243, 67);
             CancelarBoton.Name = "CancelarBoton";
             CancelarBoton.Size = new Size(75, 23);
             CancelarBoton.TabIndex = 39;
@@ -60,13 +61,23 @@
             CancelarBoton.UseVisualStyleBackColor = true;
             CancelarBoton.Click += CancelarBoton_Click;
             // 
+            // AceptarBoton
+            // 
+            AceptarBoton.Location = new Point(162, 67);
+            AceptarBoton.Name = "AceptarBoton";
+            AceptarBoton.Size = new Size(75, 23);
+            AceptarBoton.TabIndex = 38;
+            AceptarBoton.Text = "Aceptar";
+            AceptarBoton.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            button1.Location = new Point(69, 67);
+            button1.Enabled = false;
+            button1.Location = new Point(38, 67);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 38;
-            button1.Text = "Aceptar";
+            button1.Size = new Size(118, 23);
+            button1.TabIndex = 40;
+            button1.Text = "Generar Remito";
             button1.UseVisualStyleBackColor = true;
             // 
             // BusquedaForm
@@ -74,10 +85,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(365, 115);
-            Controls.Add(CancelarBoton);
             Controls.Add(button1);
+            Controls.Add(CancelarBoton);
+            Controls.Add(AceptarBoton);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(NumeroOrdenInternaText);
             Name = "BusquedaForm";
             Text = "BusquedaForm";
             ResumeLayout(false);
@@ -86,9 +98,10 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox NumeroOrdenInternaText;
         private Label label1;
         private Button CancelarBoton;
+        private Button AceptarBoton;
         private Button button1;
     }
 }

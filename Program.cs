@@ -1,3 +1,5 @@
+using GrupoCProtipoCU2yCU4;
+
 namespace ProtipoCU2yCU4
 {
     internal static class Program

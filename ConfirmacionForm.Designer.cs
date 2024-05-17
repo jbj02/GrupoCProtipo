@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            CancelarBoton = new Button();
+            AceptarBoton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -42,31 +42,31 @@
             label1.TabIndex = 0;
             label1.Text = "¿Estás seguro que deseas modificar la orden?";
             // 
-            // button2
+            // CancelarBoton
             // 
-            button2.Location = new Point(224, 135);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 20;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            CancelarBoton.Location = new Point(224, 135);
+            CancelarBoton.Name = "CancelarBoton";
+            CancelarBoton.Size = new Size(75, 23);
+            CancelarBoton.TabIndex = 20;
+            CancelarBoton.Text = "Cancelar";
+            CancelarBoton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AceptarBoton
             // 
-            button1.Location = new Point(106, 135);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 19;
-            button1.Text = "Aceptar";
-            button1.UseVisualStyleBackColor = true;
+            AceptarBoton.Location = new Point(106, 135);
+            AceptarBoton.Name = "AceptarBoton";
+            AceptarBoton.Size = new Size(75, 23);
+            AceptarBoton.TabIndex = 19;
+            AceptarBoton.Text = "Aceptar";
+            AceptarBoton.UseVisualStyleBackColor = true;
             // 
             // ConfirmacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(426, 209);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(CancelarBoton);
+            Controls.Add(AceptarBoton);
             Controls.Add(label1);
             Name = "ConfirmacionForm";
             Text = "ConfirmacionForm";
@@ -77,7 +77,7 @@
         #endregion
 
         private Label label1;
-        private Button button2;
-        private Button button1;
+        private Button CancelarBoton;
+        private Button AceptarBoton;
     }
 }

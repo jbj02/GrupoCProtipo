@@ -21,9 +21,9 @@ namespace ProtipoCU2yCU4
         {
             NumOrdenIntText.Text = ordenInternaAModificar.NumOrdenInt;
             NumOrdExtText.Text = ordenInternaAModificar.NumOrdenExt;
-            TipoDeProducto.Text = ordenInternaAModificar.TipoProducto;
-            Cantidad.Text = ordenInternaAModificar.Cantidad;
-            Cliente.Text = ordenInternaAModificar.Cliente;
+            TipoDeProductoText.Text = ordenInternaAModificar.TipoProducto;
+            CantidadText.Text = ordenInternaAModificar.Cantidad;
+            ClienteText.Text = ordenInternaAModificar.Cliente;
             FechaCreacionDT.Value = ordenInternaAModificar.FechaCreacion;
             FechaModificacionDT.Value = DateTime.Now;
             EstadoCB.SelectedIndex = 1;
