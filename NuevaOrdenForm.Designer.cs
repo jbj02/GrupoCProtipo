@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button2 = new Button();
+            CancelarBoton = new Button();
             comboBox1 = new ComboBox();
             Cliente = new TextBox();
             label8 = new Label();
@@ -58,15 +58,15 @@
             button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // CancelarBoton
             // 
-            button2.Location = new Point(236, 496);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 18;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            CancelarBoton.Location = new Point(236, 496);
+            CancelarBoton.Name = "CancelarBoton";
+            CancelarBoton.Size = new Size(75, 23);
+            CancelarBoton.TabIndex = 18;
+            CancelarBoton.Text = "Cancelar";
+            CancelarBoton.UseVisualStyleBackColor = true;
+            CancelarBoton.Click += CancelarBoton_Click;
             // 
             // comboBox1
             // 
@@ -241,7 +241,7 @@
             Controls.Add(label2);
             Controls.Add(NumOrdenIntText);
             Controls.Add(label1);
-            Controls.Add(button2);
+            Controls.Add(CancelarBoton);
             Controls.Add(button1);
             Name = "NuevaOrdenForm";
             Text = "NuevaOrdenForm";
@@ -252,7 +252,7 @@
 
         #endregion
         private Button button1;
-        private Button button2;
+        private Button CancelarBoton;
         private ComboBox comboBox1;
         private TextBox Cliente;
         private Label label8;

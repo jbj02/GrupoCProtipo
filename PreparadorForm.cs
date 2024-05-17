@@ -104,8 +104,8 @@ namespace ProtipoCU2yCU4
             {
                 var fila = new ListViewItem();
                 // le cargamos los datos a la fila
-                fila.Text = ordenInterna.NumOrdenInt;
-                fila.SubItems.Add(ordenInterna.NumOrdenExt);
+                fila.Text = ordenInterna.NumOrdenExt;
+                fila.SubItems.Add(ordenInterna.NumOrdenInt);
                 fila.SubItems.Add(ordenInterna.TipoProducto);
                 fila.SubItems.Add(ordenInterna.Cantidad);
                 fila.SubItems.Add(ordenInterna.Cliente);

@@ -71,7 +71,7 @@ namespace ProtipoCU2yCU4
             return random.Next((int)Math.Pow(10, cantidad));
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void CancelarBoton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
