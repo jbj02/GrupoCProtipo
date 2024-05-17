@@ -30,23 +30,23 @@
         {
             button2 = new Button();
             button1 = new Button();
-            textBox8 = new TextBox();
+            Cliente = new TextBox();
             label8 = new Label();
             checkBox1 = new CheckBox();
             label7 = new Label();
-            textBox6 = new TextBox();
             label6 = new Label();
-            textBox5 = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            TipoDeProducto = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            Cantidad = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            NumOrdExtText = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            NumOrdenIntText = new TextBox();
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            EstadoCB = new ComboBox();
+            FechaCreacionDT = new DateTimePicker();
+            FechaModificacionDT = new DateTimePicker();
             SuspendLayout();
             // 
             // button2
@@ -57,6 +57,7 @@
             button2.TabIndex = 37;
             button2.Text = "Cancelar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -67,13 +68,13 @@
             button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // Cliente
             // 
-            textBox8.Location = new Point(25, 251);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(361, 23);
-            textBox8.TabIndex = 35;
+            Cliente.Location = new Point(25, 251);
+            Cliente.Name = "Cliente";
+            Cliente.ReadOnly = true;
+            Cliente.Size = new Size(361, 23);
+            Cliente.TabIndex = 35;
             // 
             // label8
             // 
@@ -87,7 +88,6 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Enabled = false;
             checkBox1.Location = new Point(25, 430);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(120, 19);
@@ -104,14 +104,6 @@
             label7.TabIndex = 31;
             label7.Text = "Estado";
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(25, 351);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(361, 23);
-            textBox6.TabIndex = 30;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -120,14 +112,6 @@
             label6.Size = new Size(127, 15);
             label6.TabIndex = 29;
             label6.Text = "Fecha de Modificación";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(25, 301);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(361, 23);
-            textBox5.TabIndex = 28;
             // 
             // label5
             // 
@@ -138,13 +122,13 @@
             label5.TabIndex = 27;
             label5.Text = "Fecha de Creación";
             // 
-            // textBox4
+            // TipoDeProducto
             // 
-            textBox4.Location = new Point(25, 151);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(361, 23);
-            textBox4.TabIndex = 26;
+            TipoDeProducto.Location = new Point(25, 151);
+            TipoDeProducto.Name = "TipoDeProducto";
+            TipoDeProducto.ReadOnly = true;
+            TipoDeProducto.Size = new Size(361, 23);
+            TipoDeProducto.TabIndex = 26;
             // 
             // label4
             // 
@@ -155,12 +139,12 @@
             label4.TabIndex = 25;
             label4.Text = "Tipo de Producto";
             // 
-            // textBox3
+            // Cantidad
             // 
-            textBox3.Location = new Point(25, 201);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(361, 23);
-            textBox3.TabIndex = 24;
+            Cantidad.Location = new Point(25, 201);
+            Cantidad.Name = "Cantidad";
+            Cantidad.Size = new Size(361, 23);
+            Cantidad.TabIndex = 24;
             // 
             // label3
             // 
@@ -171,13 +155,13 @@
             label3.TabIndex = 23;
             label3.Text = "Cantidad";
             // 
-            // textBox2
+            // NumOrdExtText
             // 
-            textBox2.Location = new Point(25, 101);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(361, 23);
-            textBox2.TabIndex = 22;
+            NumOrdExtText.Location = new Point(25, 101);
+            NumOrdExtText.Name = "NumOrdExtText";
+            NumOrdExtText.ReadOnly = true;
+            NumOrdExtText.Size = new Size(361, 23);
+            NumOrdExtText.TabIndex = 22;
             // 
             // label2
             // 
@@ -188,13 +172,13 @@
             label2.TabIndex = 21;
             label2.Text = "N° de Orden Externa";
             // 
-            // textBox1
+            // NumOrdenIntText
             // 
-            textBox1.Location = new Point(25, 51);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(361, 23);
-            textBox1.TabIndex = 20;
+            NumOrdenIntText.Location = new Point(25, 51);
+            NumOrdenIntText.Name = "NumOrdenIntText";
+            NumOrdenIntText.ReadOnly = true;
+            NumOrdenIntText.Size = new Size(361, 23);
+            NumOrdenIntText.TabIndex = 20;
             // 
             // label1
             // 
@@ -205,40 +189,62 @@
             label1.TabIndex = 19;
             label1.Text = "N° de Orden Interna";
             // 
-            // comboBox1
+            // EstadoCB
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(25, 401);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 38;
+            EstadoCB.FormattingEnabled = true;
+            EstadoCB.Items.AddRange(new object[] { "EnSeleccion", "Seleccionada", "Preparada", "Despachada" });
+            EstadoCB.Location = new Point(25, 401);
+            EstadoCB.Name = "EstadoCB";
+            EstadoCB.Size = new Size(121, 23);
+            EstadoCB.TabIndex = 38;
+            // 
+            // FechaCreacionDT
+            // 
+            FechaCreacionDT.Enabled = false;
+            FechaCreacionDT.Format = DateTimePickerFormat.Short;
+            FechaCreacionDT.Location = new Point(25, 298);
+            FechaCreacionDT.Name = "FechaCreacionDT";
+            FechaCreacionDT.Size = new Size(82, 23);
+            FechaCreacionDT.TabIndex = 58;
+            FechaCreacionDT.Value = new DateTime(2024, 5, 15, 0, 0, 0, 0);
+            // 
+            // FechaModificacionDT
+            // 
+            FechaModificacionDT.Enabled = false;
+            FechaModificacionDT.Format = DateTimePickerFormat.Short;
+            FechaModificacionDT.Location = new Point(25, 348);
+            FechaModificacionDT.Name = "FechaModificacionDT";
+            FechaModificacionDT.Size = new Size(82, 23);
+            FechaModificacionDT.TabIndex = 59;
+            FechaModificacionDT.Value = new DateTime(2024, 5, 16, 0, 0, 0, 0);
             // 
             // ModificarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(409, 543);
-            Controls.Add(comboBox1);
+            Controls.Add(FechaModificacionDT);
+            Controls.Add(FechaCreacionDT);
+            Controls.Add(EstadoCB);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox8);
+            Controls.Add(Cliente);
             Controls.Add(label8);
             Controls.Add(checkBox1);
             Controls.Add(label7);
-            Controls.Add(textBox6);
             Controls.Add(label6);
-            Controls.Add(textBox5);
             Controls.Add(label5);
-            Controls.Add(textBox4);
+            Controls.Add(TipoDeProducto);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(Cantidad);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(NumOrdExtText);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(NumOrdenIntText);
             Controls.Add(label1);
             Name = "ModificarForm";
             Text = "ModificarForm";
+            Load += ModificarForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,22 +253,22 @@
 
         private Button button2;
         private Button button1;
-        private TextBox textBox8;
+        private TextBox Cliente;
         private Label label8;
         private CheckBox checkBox1;
         private Label label7;
-        private TextBox textBox6;
         private Label label6;
-        private TextBox textBox5;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox TipoDeProducto;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox Cantidad;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox NumOrdExtText;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox NumOrdenIntText;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox EstadoCB;
+        private DateTimePicker FechaCreacionDT;
+        private DateTimePicker FechaModificacionDT;
     }
 }

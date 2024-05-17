@@ -33,6 +33,7 @@
             Tipo_Producto = new ColumnHeader();
             Cantidad = new ColumnHeader();
             Cliente = new ColumnHeader();
+            Prioridad = new ColumnHeader();
             Fecha_Creacion = new ColumnHeader();
             OrdenInt_List = new ListView();
             N_Orden_Ext2 = new ColumnHeader();
@@ -44,22 +45,23 @@
             Listo_Para_Entrega = new ColumnHeader();
             Fecha_Creacion2 = new ColumnHeader();
             Fecha_Modificacion = new ColumnHeader();
-            Nueva_Orden = new Button();
-            Actualizar = new Button();
-            Modificar = new Button();
-            Buscar = new Button();
-            Cancelar = new Button();
-            button1 = new Button();
+            Nueva_OrdenBoton = new Button();
+            ActualizarBoton2 = new Button();
+            ModificarBoton = new Button();
+            BuscarBoton = new Button();
+            CancelarBoton = new Button();
+            ActualizarBoton1 = new Button();
             SuspendLayout();
             // 
             // OrdenExt_List
             // 
-            OrdenExt_List.Columns.AddRange(new ColumnHeader[] { Num_Orden_Ext, Tipo_Producto, Cantidad, Cliente, Fecha_Creacion });
+            OrdenExt_List.Columns.AddRange(new ColumnHeader[] { Num_Orden_Ext, Tipo_Producto, Cantidad, Cliente, Prioridad, Fecha_Creacion });
+            OrdenExt_List.FullRowSelect = true;
             OrdenExt_List.GridLines = true;
             OrdenExt_List.Location = new Point(116, 12);
             OrdenExt_List.MultiSelect = false;
             OrdenExt_List.Name = "OrdenExt_List";
-            OrdenExt_List.Size = new Size(604, 170);
+            OrdenExt_List.Size = new Size(667, 170);
             OrdenExt_List.TabIndex = 1;
             OrdenExt_List.UseCompatibleStateImageBehavior = false;
             OrdenExt_List.View = View.Details;
@@ -84,6 +86,10 @@
             Cliente.Text = "Cliente";
             Cliente.Width = 120;
             // 
+            // Prioridad
+            // 
+            Prioridad.Text = "Prioridad";
+            // 
             // Fecha_Creacion
             // 
             Fecha_Creacion.Text = "Fecha de Creación";
@@ -92,6 +98,7 @@
             // OrdenInt_List
             // 
             OrdenInt_List.Columns.AddRange(new ColumnHeader[] { N_Orden_Ext2, N_Orden_Int, Tipo_Producto2, Cantidades2, Cliente2, Estado, Listo_Para_Entrega, Fecha_Creacion2, Fecha_Modificacion });
+            OrdenInt_List.FullRowSelect = true;
             OrdenInt_List.GridLines = true;
             OrdenInt_List.Location = new Point(14, 243);
             OrdenInt_List.MultiSelect = false;
@@ -146,72 +153,75 @@
             Fecha_Modificacion.Text = "Fecha de Modificación";
             Fecha_Modificacion.Width = 140;
             // 
-            // Nueva_Orden
+            // Nueva_OrdenBoton
             // 
-            Nueva_Orden.Location = new Point(625, 188);
-            Nueva_Orden.Name = "Nueva_Orden";
-            Nueva_Orden.Size = new Size(95, 23);
-            Nueva_Orden.TabIndex = 3;
-            Nueva_Orden.Text = "Nueva Orden";
-            Nueva_Orden.UseVisualStyleBackColor = true;
-            Nueva_Orden.Click += Nueva_Orden_Click;
+            Nueva_OrdenBoton.Location = new Point(625, 188);
+            Nueva_OrdenBoton.Name = "Nueva_OrdenBoton";
+            Nueva_OrdenBoton.Size = new Size(95, 23);
+            Nueva_OrdenBoton.TabIndex = 3;
+            Nueva_OrdenBoton.Text = "Nueva Orden";
+            Nueva_OrdenBoton.UseVisualStyleBackColor = true;
+            Nueva_OrdenBoton.Click += Nueva_OrdenBoton_Click;
             // 
-            // Actualizar
+            // ActualizarBoton2
             // 
-            Actualizar.Location = new Point(618, 415);
-            Actualizar.Name = "Actualizar";
-            Actualizar.Size = new Size(95, 23);
-            Actualizar.TabIndex = 4;
-            Actualizar.Text = "Actualizar";
-            Actualizar.UseVisualStyleBackColor = true;
+            ActualizarBoton2.Location = new Point(618, 415);
+            ActualizarBoton2.Name = "ActualizarBoton2";
+            ActualizarBoton2.Size = new Size(95, 23);
+            ActualizarBoton2.TabIndex = 4;
+            ActualizarBoton2.Text = "Actualizar";
+            ActualizarBoton2.UseVisualStyleBackColor = true;
             // 
-            // Modificar
+            // ModificarBoton
             // 
-            Modificar.Location = new Point(501, 415);
-            Modificar.Name = "Modificar";
-            Modificar.Size = new Size(95, 23);
-            Modificar.TabIndex = 5;
-            Modificar.Text = "Modificar";
-            Modificar.UseVisualStyleBackColor = true;
+            ModificarBoton.Location = new Point(501, 415);
+            ModificarBoton.Name = "ModificarBoton";
+            ModificarBoton.Size = new Size(95, 23);
+            ModificarBoton.TabIndex = 5;
+            ModificarBoton.Text = "Modificar";
+            ModificarBoton.UseVisualStyleBackColor = true;
+            ModificarBoton.Click += ModificarBoton_Click;
             // 
-            // Buscar
+            // BuscarBoton
             // 
-            Buscar.Location = new Point(384, 415);
-            Buscar.Name = "Buscar";
-            Buscar.Size = new Size(95, 23);
-            Buscar.TabIndex = 6;
-            Buscar.Text = "Buscar";
-            Buscar.UseVisualStyleBackColor = true;
+            BuscarBoton.Location = new Point(384, 415);
+            BuscarBoton.Name = "BuscarBoton";
+            BuscarBoton.Size = new Size(95, 23);
+            BuscarBoton.TabIndex = 6;
+            BuscarBoton.Text = "Buscar";
+            BuscarBoton.UseVisualStyleBackColor = true;
+            BuscarBoton.Click += BuscarBoton_Click;
             // 
-            // Cancelar
+            // CancelarBoton
             // 
-            Cancelar.Location = new Point(735, 415);
-            Cancelar.Name = "Cancelar";
-            Cancelar.Size = new Size(95, 23);
-            Cancelar.TabIndex = 7;
-            Cancelar.Text = "Cancelar";
-            Cancelar.UseVisualStyleBackColor = true;
+            CancelarBoton.Location = new Point(735, 415);
+            CancelarBoton.Name = "CancelarBoton";
+            CancelarBoton.Size = new Size(95, 23);
+            CancelarBoton.TabIndex = 7;
+            CancelarBoton.Text = "Cancelar";
+            CancelarBoton.UseVisualStyleBackColor = true;
+            CancelarBoton.Click += CancelarBoton_Click;
             // 
-            // button1
+            // ActualizarBoton1
             // 
-            button1.Location = new Point(524, 188);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 23);
-            button1.TabIndex = 8;
-            button1.Text = "Actualizar";
-            button1.UseVisualStyleBackColor = true;
+            ActualizarBoton1.Location = new Point(524, 188);
+            ActualizarBoton1.Name = "ActualizarBoton1";
+            ActualizarBoton1.Size = new Size(95, 23);
+            ActualizarBoton1.TabIndex = 8;
+            ActualizarBoton1.Text = "Actualizar";
+            ActualizarBoton1.UseVisualStyleBackColor = true;
             // 
             // PreparadorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 450);
-            Controls.Add(button1);
-            Controls.Add(Cancelar);
-            Controls.Add(Buscar);
-            Controls.Add(Modificar);
-            Controls.Add(Actualizar);
-            Controls.Add(Nueva_Orden);
+            Controls.Add(ActualizarBoton1);
+            Controls.Add(CancelarBoton);
+            Controls.Add(BuscarBoton);
+            Controls.Add(ModificarBoton);
+            Controls.Add(ActualizarBoton2);
+            Controls.Add(Nueva_OrdenBoton);
             Controls.Add(OrdenInt_List);
             Controls.Add(OrdenExt_List);
             Name = "PreparadorForm";
@@ -238,11 +248,12 @@
         private ColumnHeader Listo_Para_Entrega;
         private ColumnHeader Fecha_Creacion2;
         private ColumnHeader Fecha_Modificacion;
-        private Button Nueva_Orden;
-        private Button Actualizar;
-        private Button Modificar;
-        private Button Buscar;
-        private Button Cancelar;
-        private Button button1;
+        private Button Nueva_OrdenBoton;
+        private Button ActualizarBoton2;
+        private Button ModificarBoton;
+        private Button BuscarBoton;
+        private Button CancelarBoton;
+        private Button ActualizarBoton1;
+        private ColumnHeader Prioridad;
     }
 }

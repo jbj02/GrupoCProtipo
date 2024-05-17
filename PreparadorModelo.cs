@@ -5,6 +5,9 @@
         public List<OrdenExt> OrdenesExternas { get; set; }
 
         public List<OrdenInt> OrdenesInternas { get; set; }
+        public OrdenExt OrdenInternaPorCrear { get; set; }
+        public OrdenInt OrdenInternaPorModificar { get; set; }
+
         // Creamos un constructor para cargarle datos y probar el prototipo de forma aislada
         public PreparadorModelo()
         {
@@ -16,6 +19,7 @@
                     TipoProducto = "Producto A",
                     Cantidad = "2",
                     Cliente = "Mercado Libre",
+                    Prioridad = "Alta",
                     FechaCreacion = new DateTime(2024,5,15)
                 },
                 new OrdenExt
@@ -24,6 +28,7 @@
                     TipoProducto = "Producto B",
                     Cantidad = "5",
                     Cliente = "Amazon",
+                    Prioridad = "Media",
                     FechaCreacion = new DateTime(2024, 5, 16)
                 },
                 new OrdenExt
@@ -32,6 +37,7 @@
                     TipoProducto = "Producto C",
                     Cantidad = "3",
                     Cliente = "Walmart",
+                    Prioridad = "Baja",
                     FechaCreacion = new DateTime(2024, 5, 17)
                 }
             };
@@ -47,7 +53,7 @@
                     Cliente = "Mercado Libre",
                     FechaCreacion = new DateTime(2024,5,15),
                     FechaModificacion = new DateTime(2024,5,16),
-                    Estado = "SELECCIONADA",
+                    Estado = "Seleccionada",
                     LPE = "NO"
                 },
                 new OrdenInt
@@ -59,7 +65,7 @@
                     Cliente = "Amazon",
                     FechaCreacion = new DateTime(2024, 5, 16),
                     FechaModificacion = new DateTime(2024,5,17),
-                    Estado = "SELECCIONADA",
+                    Estado = "Seleccionada",
                     LPE = "NO"
                 },
                 new OrdenInt
@@ -70,8 +76,8 @@
                     Cantidad = "3",
                     Cliente = "Walmart",
                     FechaCreacion = new DateTime(2024, 5, 17),
-                    FechaModificacion = new DateTime(2024,5,18),
-                    Estado = "SELECCIONADA",
+                    FechaModificacion = new DateTime(2024,5,17),
+                    Estado = "Seleccionada",
                     LPE = "NO"
                 }
             };

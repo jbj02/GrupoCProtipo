@@ -16,7 +16,7 @@ namespace ProtipoCU2yCU4
             CargarListaOrdenInt();
         }
 
-        private void Nueva_Orden_Click(object sender, EventArgs e)
+        private void Nueva_OrdenBoton_Click(object sender, EventArgs e)
         {
             // Mensaje en caso de que no seleccione ninguna fila a editar
             if (OrdenExt_List.SelectedItems.Count == 0)
@@ -25,14 +25,55 @@ namespace ProtipoCU2yCU4
                 return;
             }
 
-            // Creamos variable que apunte a la orden externa de la fila seleccionada
-            var OrdenInternaACrear = (OrdenInt)OrdenExt_List.SelectedItems[0].Tag; // Como Tag hace referencia muy generica a un objeto hay que especificar su tipo se le dice "Castear"
-            // Cargamos los datos ingresados
-            Num_Orden_Ext.Text = OrdenInternaACrear.NumOrdenExt;
-            Tipo_Producto.Text = OrdenInternaACrear.TipoProducto;
-            Cantidad.Text = OrdenInternaACrear.Cantidad;
-            Cliente.Text = OrdenInternaACrear.Cliente;
-            Fecha_Creacion.Text = OrdenInternaACrear.FechaCreacion.ToString("dd/MM/yyyy");
+            var ordenSeleccionada = (OrdenExt)OrdenExt_List.SelectedItems[0].Tag;
+
+            // Crear una instancia de OrdenExt para OrdenInternaPorCrear
+            modelo.OrdenInternaPorCrear = new OrdenExt
+            {
+                // Cargamos los datos de la tabla en los atributos del objeto
+                NumOrdenExt = ordenSeleccionada.NumOrdenExt,
+                TipoProducto = ordenSeleccionada.TipoProducto,
+                Cantidad = ordenSeleccionada.Cantidad,
+                Cliente = ordenSeleccionada.Cliente,
+                Prioridad = ordenSeleccionada.Prioridad,
+                FechaCreacion = ordenSeleccionada.FechaCreacion
+            };
+
+            // Abre el Formulario NuevaOrdenForm y pasa los datos
+            NuevaOrdenForm nuevaOrdenForm = new NuevaOrdenForm();
+            nuevaOrdenForm.CargaDatos(modelo.OrdenInternaPorCrear);
+            nuevaOrdenForm.ShowDialog();
+        }
+
+        private void ModificarBoton_Click(object sender, EventArgs e)
+        {
+            // Mensaje en caso de que no seleccione ninguna fila a editar
+            if (OrdenInt_List.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Seleccione un item de la lista primero.");
+                return;
+            }
+
+            var ordenSeleccionada = (OrdenInt)OrdenInt_List.SelectedItems[0].Tag;
+
+            // Crear una instancia de OrdenExt para OrdenInternaPorCrear
+            modelo.OrdenInternaPorModificar = new OrdenInt
+            {
+                // Cargamos los datos de la tabla en los atributos del objeto
+                NumOrdenInt = ordenSeleccionada.NumOrdenInt,
+                NumOrdenExt = ordenSeleccionada.NumOrdenExt,
+                TipoProducto = ordenSeleccionada.TipoProducto,
+                Cantidad = ordenSeleccionada.Cantidad,
+                Cliente = ordenSeleccionada.Cliente,
+                FechaCreacion = ordenSeleccionada.FechaCreacion,
+                FechaModificacion = ordenSeleccionada.FechaModificacion,
+                Estado = ordenSeleccionada.Estado
+            };
+
+            // Abre el Formulario ModificarForm y pasa los datos
+            ModificarForm modificarOrdenForm = new ModificarForm();
+            modificarOrdenForm.CargaDatos(modelo.OrdenInternaPorModificar);
+            modificarOrdenForm.ShowDialog();
         }
 
         private void CargarListaOrdenExt()
@@ -47,6 +88,7 @@ namespace ProtipoCU2yCU4
                 fila.SubItems.Add(ordenExterna.TipoProducto); // Siguiente columna...
                 fila.SubItems.Add(ordenExterna.Cantidad);
                 fila.SubItems.Add(ordenExterna.Cliente);
+                fila.SubItems.Add(ordenExterna.Prioridad);
                 fila.SubItems.Add(ordenExterna.FechaCreacion.ToString("dd/MM/yyyy"));
                 fila.Tag = ordenExterna; // Permite identificar cuál objeto se está utilizando
                 // agregamops fila a la lista
@@ -75,6 +117,18 @@ namespace ProtipoCU2yCU4
                 // agregamops fila a la lista
                 OrdenInt_List.Items.Add(fila);
             }
+        }
+
+        private void CancelarBoton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BuscarBoton_Click(object sender, EventArgs e)
+        {
+            // Abre el Formulario BuscarForm
+            BusquedaForm busquedaForm = new();
+            busquedaForm.ShowDialog();
         }
     }
 }

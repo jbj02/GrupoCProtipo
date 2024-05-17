@@ -30,7 +30,7 @@
         {
             textBox1 = new TextBox();
             label1 = new Label();
-            button2 = new Button();
+            CancelarBoton = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
@@ -50,14 +50,15 @@
             label1.TabIndex = 1;
             label1.Text = "Número de Orden Interna";
             // 
-            // button2
+            // CancelarBoton
             // 
-            button2.Location = new Point(187, 67);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 39;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            CancelarBoton.Location = new Point(187, 67);
+            CancelarBoton.Name = "CancelarBoton";
+            CancelarBoton.Size = new Size(75, 23);
+            CancelarBoton.TabIndex = 39;
+            CancelarBoton.Text = "Cancelar";
+            CancelarBoton.UseVisualStyleBackColor = true;
+            CancelarBoton.Click += CancelarBoton_Click;
             // 
             // button1
             // 
@@ -73,7 +74,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(365, 115);
-            Controls.Add(button2);
+            Controls.Add(CancelarBoton);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -87,7 +88,7 @@
 
         private TextBox textBox1;
         private Label label1;
-        private Button button2;
+        private Button CancelarBoton;
         private Button button1;
     }
 }

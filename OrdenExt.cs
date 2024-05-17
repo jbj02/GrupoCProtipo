@@ -6,6 +6,7 @@
         public string TipoProducto { get; set; }
         public string Cantidad { get; set; }
         public string Cliente { get; set; }
+        public string Prioridad { get; set; }
         public DateTime FechaCreacion { get; set; }
     }
 }

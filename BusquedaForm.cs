@@ -16,5 +16,10 @@ namespace ProtipoCU2yCU4
         {
             InitializeComponent();
         }
+
+        private void CancelarBoton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
