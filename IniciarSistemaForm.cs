@@ -12,6 +12,7 @@ namespace GrupoCProtipoCU2yCU4
 {
     public partial class IniciarSistemaForm : Form
     {
+        IniciarSistemaModelo modelo = new();
         public IniciarSistemaForm()
         {
             InitializeComponent();
