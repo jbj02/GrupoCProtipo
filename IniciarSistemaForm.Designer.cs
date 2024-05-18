@@ -32,6 +32,8 @@
             txtContraseña = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // txtUsuario
@@ -56,6 +58,7 @@
             btnAceptar.TabIndex = 2;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
@@ -66,17 +69,38 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(147, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Usuario";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(147, 87);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Contraseña";
+            // 
             // IniciarSistemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(587, 290);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
             Name = "IniciarSistemaForm";
             Text = "IniciarSistemaForm";
+            Load += IniciarSistemaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -87,5 +111,7 @@
         private TextBox txtContraseña;
         private Button btnAceptar;
         private Button btnCancelar;
+        private Label label1;
+        private Label label2;
     }
 }
