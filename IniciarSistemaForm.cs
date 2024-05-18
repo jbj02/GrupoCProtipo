@@ -68,7 +68,7 @@ namespace GrupoCProtipoCU2yCU4
                     estiform.ShowDialog();
                 }
             }
-            
+
         }
         public string BuscarClave(string usuario)
         {
@@ -87,7 +87,25 @@ namespace GrupoCProtipoCU2yCU4
                 return "";
             }
             return persona.Acceso;
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.UseSystemPasswordChar == false)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+            }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

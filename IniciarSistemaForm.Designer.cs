@@ -34,6 +34,7 @@
             btnCancelar = new Button();
             label1 = new Label();
             label2 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // txtUsuario
@@ -49,6 +50,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(279, 23);
             txtContraseña.TabIndex = 1;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // btnAceptar
             // 
@@ -68,6 +70,7 @@
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label1
             // 
@@ -87,11 +90,21 @@
             label2.TabIndex = 5;
             label2.Text = "Contraseña";
             // 
+            // button1
+            // 
+            button1.Location = new Point(403, 107);
+            button1.Name = "button1";
+            button1.Size = new Size(14, 17);
+            button1.TabIndex = 6;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // IniciarSistemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(587, 290);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCancelar);
@@ -113,5 +126,6 @@
         private Button btnCancelar;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }
