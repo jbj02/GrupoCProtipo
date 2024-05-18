@@ -1,4 +1,5 @@
-﻿using ProtipoCU2yCU4;
+﻿using GrupoCProtipo.Estibador;
+using ProtipoCU2yCU4;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,25 +13,18 @@ using System.Windows.Forms;
 
 namespace GrupoCProtipoCU2yCU4
 {
-    public partial class DespachadorForm : Form
+    public partial class EstibadorForm : Form
     {
-        DespachadorModelo modelo = new();
-        public DespachadorForm()
+        EstibadorModelo modelo = new();
+        public EstibadorForm()
         {
             InitializeComponent();
         }
 
-        private void CancelarBoton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void DespachadorForm_Load(object sender, EventArgs e)
+        private void EstibadorForm_Load(object sender, EventArgs e)
         {
             CargarListaOrdenInt();
         }
-
-
 
         private void CargarListaOrdenInt()
         {
@@ -53,6 +47,11 @@ namespace GrupoCProtipoCU2yCU4
                 // agregamops fila a la lista
                 OrdenInt_List.Items.Add(fila);
             }
+        }
+
+        private void CancelarBoton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ModificarBoton_Click(object sender, EventArgs e)
@@ -84,37 +83,6 @@ namespace GrupoCProtipoCU2yCU4
             ModificarForm modificarOrdenForm = new ModificarForm();
             modificarOrdenForm.CargaDatos(modelo.OrdenInternaPorModificar);
             modificarOrdenForm.ShowDialog();
-        }
-
-        private void GenerarRemitoBoton_Click(object sender, EventArgs e)
-        {
-            // Mensaje en caso de que no seleccione ninguna fila a editar
-            if (OrdenInt_List.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Seleccione un item de la lista primero.");
-                return;
-            }
-
-            var ordenSeleccionada = (OrdenInt)OrdenInt_List.SelectedItems[0].Tag;
-
-            // Crear una instancia de OrdenExt para OrdenInternaPorCrear
-            modelo.OrdenInternaPorModificar = new OrdenInt
-            {
-                // Cargamos los datos de la tabla en los atributos del objeto
-                NumOrdenInt = ordenSeleccionada.NumOrdenInt,
-                NumOrdenExt = ordenSeleccionada.NumOrdenExt,
-                TipoProducto = ordenSeleccionada.TipoProducto,
-                Cantidad = ordenSeleccionada.Cantidad,
-                Cliente = ordenSeleccionada.Cliente,
-                FechaCreacion = ordenSeleccionada.FechaCreacion,
-                FechaModificacion = ordenSeleccionada.FechaModificacion,
-                Estado = ordenSeleccionada.Estado
-            };
-
-            // Abre el Formulario ModificarForm y pasa los datos
-            GenerarRemitoForm generarRemitoForm = new GenerarRemitoForm();
-            generarRemitoForm.CargaDatos(modelo.OrdenInternaPorModificar);
-            generarRemitoForm.ShowDialog();
         }
     }
 }

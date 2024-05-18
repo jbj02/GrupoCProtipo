@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProtipoCU2yCU4
+namespace GrupoCProtipo;
+public partial class Menu : Form
 {
-    public partial class ConfirmacionForm : Form
+    public Menu()
     {
-        public ConfirmacionForm()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

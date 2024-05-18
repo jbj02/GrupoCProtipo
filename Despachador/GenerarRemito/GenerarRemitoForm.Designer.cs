@@ -51,13 +51,23 @@
             label9 = new Label();
             DespachoCB = new ComboBox();
             label10 = new Label();
+            OrdenInt_List = new ListView();
+            N_Orden_Ext2 = new ColumnHeader();
+            N_Orden_Int = new ColumnHeader();
+            Tipo_Producto2 = new ColumnHeader();
+            Cantidades2 = new ColumnHeader();
+            Cliente2 = new ColumnHeader();
+            Estado = new ColumnHeader();
+            Listo_Para_Entrega = new ColumnHeader();
+            Fecha_Creacion2 = new ColumnHeader();
+            Fecha_Modificacion = new ColumnHeader();
             SuspendLayout();
             // 
             // FechaModificacionDT
             // 
             FechaModificacionDT.Enabled = false;
             FechaModificacionDT.Format = DateTimePickerFormat.Short;
-            FechaModificacionDT.Location = new Point(12, 331);
+            FechaModificacionDT.Location = new Point(642, 327);
             FechaModificacionDT.Name = "FechaModificacionDT";
             FechaModificacionDT.Size = new Size(82, 23);
             FechaModificacionDT.TabIndex = 78;
@@ -67,7 +77,7 @@
             // 
             FechaCreacionDT.Enabled = false;
             FechaCreacionDT.Format = DateTimePickerFormat.Short;
-            FechaCreacionDT.Location = new Point(12, 281);
+            FechaCreacionDT.Location = new Point(642, 277);
             FechaCreacionDT.Name = "FechaCreacionDT";
             FechaCreacionDT.Size = new Size(82, 23);
             FechaCreacionDT.TabIndex = 77;
@@ -77,14 +87,14 @@
             // 
             EstadoCB.FormattingEnabled = true;
             EstadoCB.Items.AddRange(new object[] { "EnSeleccion", "Seleccionada", "Preparada", "Despachada" });
-            EstadoCB.Location = new Point(12, 426);
+            EstadoCB.Location = new Point(642, 422);
             EstadoCB.Name = "EstadoCB";
             EstadoCB.Size = new Size(121, 23);
             EstadoCB.TabIndex = 76;
             // 
             // CancelarBoton
             // 
-            CancelarBoton.Location = new Point(214, 494);
+            CancelarBoton.Location = new Point(844, 490);
             CancelarBoton.Name = "CancelarBoton";
             CancelarBoton.Size = new Size(75, 23);
             CancelarBoton.TabIndex = 75;
@@ -94,7 +104,7 @@
             // 
             // AceptarBoton
             // 
-            AceptarBoton.Location = new Point(96, 494);
+            AceptarBoton.Location = new Point(726, 490);
             AceptarBoton.Name = "AceptarBoton";
             AceptarBoton.Size = new Size(75, 23);
             AceptarBoton.TabIndex = 74;
@@ -103,7 +113,7 @@
             // 
             // ClienteText
             // 
-            ClienteText.Location = new Point(12, 234);
+            ClienteText.Location = new Point(642, 230);
             ClienteText.Name = "ClienteText";
             ClienteText.ReadOnly = true;
             ClienteText.Size = new Size(361, 23);
@@ -112,7 +122,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 213);
+            label8.Location = new Point(642, 209);
             label8.Name = "label8";
             label8.Size = new Size(44, 15);
             label8.TabIndex = 72;
@@ -121,7 +131,7 @@
             // ListoParaEntregaCB
             // 
             ListoParaEntregaCB.AutoSize = true;
-            ListoParaEntregaCB.Location = new Point(12, 455);
+            ListoParaEntregaCB.Location = new Point(642, 451);
             ListoParaEntregaCB.Name = "ListoParaEntregaCB";
             ListoParaEntregaCB.Size = new Size(120, 19);
             ListoParaEntregaCB.TabIndex = 71;
@@ -131,7 +141,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 405);
+            label7.Location = new Point(642, 401);
             label7.Name = "label7";
             label7.Size = new Size(42, 15);
             label7.TabIndex = 70;
@@ -140,7 +150,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 313);
+            label6.Location = new Point(642, 309);
             label6.Name = "label6";
             label6.Size = new Size(127, 15);
             label6.TabIndex = 69;
@@ -149,7 +159,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 263);
+            label5.Location = new Point(642, 259);
             label5.Name = "label5";
             label5.Size = new Size(104, 15);
             label5.TabIndex = 68;
@@ -157,7 +167,7 @@
             // 
             // TipoDeProductoText
             // 
-            TipoDeProductoText.Location = new Point(12, 134);
+            TipoDeProductoText.Location = new Point(642, 130);
             TipoDeProductoText.Name = "TipoDeProductoText";
             TipoDeProductoText.ReadOnly = true;
             TipoDeProductoText.Size = new Size(361, 23);
@@ -166,7 +176,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 113);
+            label4.Location = new Point(642, 109);
             label4.Name = "label4";
             label4.Size = new Size(98, 15);
             label4.TabIndex = 66;
@@ -174,7 +184,7 @@
             // 
             // CantidadText
             // 
-            CantidadText.Location = new Point(12, 184);
+            CantidadText.Location = new Point(642, 180);
             CantidadText.Name = "CantidadText";
             CantidadText.Size = new Size(361, 23);
             CantidadText.TabIndex = 65;
@@ -182,7 +192,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 163);
+            label3.Location = new Point(642, 159);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 64;
@@ -190,7 +200,7 @@
             // 
             // NumOrdExtText
             // 
-            NumOrdExtText.Location = new Point(12, 84);
+            NumOrdExtText.Location = new Point(642, 80);
             NumOrdExtText.Name = "NumOrdExtText";
             NumOrdExtText.ReadOnly = true;
             NumOrdExtText.Size = new Size(361, 23);
@@ -199,7 +209,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 63);
+            label2.Location = new Point(642, 59);
             label2.Name = "label2";
             label2.Size = new Size(115, 15);
             label2.TabIndex = 62;
@@ -207,7 +217,7 @@
             // 
             // NumOrdenIntText
             // 
-            NumOrdenIntText.Location = new Point(12, 34);
+            NumOrdenIntText.Location = new Point(642, 30);
             NumOrdenIntText.Name = "NumOrdenIntText";
             NumOrdenIntText.ReadOnly = true;
             NumOrdenIntText.Size = new Size(361, 23);
@@ -216,7 +226,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 13);
+            label1.Location = new Point(642, 9);
             label1.Name = "label1";
             label1.Size = new Size(113, 15);
             label1.TabIndex = 60;
@@ -226,7 +236,7 @@
             // 
             FechaGeneracionRemiroDT.Enabled = false;
             FechaGeneracionRemiroDT.Format = DateTimePickerFormat.Short;
-            FechaGeneracionRemiroDT.Location = new Point(12, 375);
+            FechaGeneracionRemiroDT.Location = new Point(642, 371);
             FechaGeneracionRemiroDT.Name = "FechaGeneracionRemiroDT";
             FechaGeneracionRemiroDT.Size = new Size(82, 23);
             FechaGeneracionRemiroDT.TabIndex = 80;
@@ -235,7 +245,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(12, 357);
+            label9.Location = new Point(642, 353);
             label9.Name = "label9";
             label9.Size = new Size(174, 15);
             label9.TabIndex = 79;
@@ -244,7 +254,7 @@
             // DespachoCB
             // 
             DespachoCB.FormattingEnabled = true;
-            DespachoCB.Location = new Point(168, 426);
+            DespachoCB.Location = new Point(798, 422);
             DespachoCB.Name = "DespachoCB";
             DespachoCB.Size = new Size(121, 23);
             DespachoCB.TabIndex = 82;
@@ -252,17 +262,76 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(168, 405);
+            label10.Location = new Point(798, 401);
             label10.Name = "label10";
             label10.Size = new Size(59, 15);
             label10.TabIndex = 81;
             label10.Text = "Despacho";
             // 
+            // OrdenInt_List
+            // 
+            OrdenInt_List.Columns.AddRange(new ColumnHeader[] { N_Orden_Ext2, N_Orden_Int, Tipo_Producto2, Cantidades2, Cliente2, Estado, Listo_Para_Entrega, Fecha_Creacion2, Fecha_Modificacion });
+            OrdenInt_List.FullRowSelect = true;
+            OrdenInt_List.GridLines = true;
+            OrdenInt_List.Location = new Point(22, 12);
+            OrdenInt_List.MultiSelect = false;
+            OrdenInt_List.Name = "OrdenInt_List";
+            OrdenInt_List.Size = new Size(569, 291);
+            OrdenInt_List.TabIndex = 83;
+            OrdenInt_List.UseCompatibleStateImageBehavior = false;
+            OrdenInt_List.View = View.Details;
+            // 
+            // N_Orden_Ext2
+            // 
+            N_Orden_Ext2.Text = "N° Orden Ext";
+            N_Orden_Ext2.Width = 90;
+            // 
+            // N_Orden_Int
+            // 
+            N_Orden_Int.Text = "N° Orden Int";
+            N_Orden_Int.Width = 90;
+            // 
+            // Tipo_Producto2
+            // 
+            Tipo_Producto2.Text = "Tipo Producto";
+            Tipo_Producto2.Width = 90;
+            // 
+            // Cantidades2
+            // 
+            Cantidades2.Text = "Cantidades";
+            Cantidades2.Width = 80;
+            // 
+            // Cliente2
+            // 
+            Cliente2.Text = "Cliente";
+            Cliente2.Width = 120;
+            // 
+            // Estado
+            // 
+            Estado.Text = "Estado";
+            Estado.Width = 100;
+            // 
+            // Listo_Para_Entrega
+            // 
+            Listo_Para_Entrega.Text = "LPE";
+            Listo_Para_Entrega.Width = 40;
+            // 
+            // Fecha_Creacion2
+            // 
+            Fecha_Creacion2.Text = "Fecha de Creación";
+            Fecha_Creacion2.Width = 140;
+            // 
+            // Fecha_Modificacion
+            // 
+            Fecha_Modificacion.Text = "Fecha de Modificación";
+            Fecha_Modificacion.Width = 140;
+            // 
             // GenerarRemitoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(396, 552);
+            ClientSize = new Size(1028, 548);
+            Controls.Add(OrdenInt_List);
             Controls.Add(DespachoCB);
             Controls.Add(label10);
             Controls.Add(FechaGeneracionRemiroDT);
@@ -288,6 +357,7 @@
             Controls.Add(label1);
             Name = "GenerarRemitoForm";
             Text = "GenerarRemitoForm";
+            Load += GenerarRemitoForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -317,5 +387,15 @@
         private Label label9;
         private ComboBox DespachoCB;
         private Label label10;
+        private ListView OrdenInt_List;
+        private ColumnHeader N_Orden_Ext2;
+        private ColumnHeader N_Orden_Int;
+        private ColumnHeader Tipo_Producto2;
+        private ColumnHeader Cantidades2;
+        private ColumnHeader Cliente2;
+        private ColumnHeader Estado;
+        private ColumnHeader Listo_Para_Entrega;
+        private ColumnHeader Fecha_Creacion2;
+        private ColumnHeader Fecha_Modificacion;
     }
 }

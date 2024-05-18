@@ -1,4 +1,4 @@
-﻿using GrupoCProtipo;
+﻿using GrupoCProtipo.IniciarSistema;
 using ProtipoCU2yCU4;
 using System;
 using System.Collections.Generic;

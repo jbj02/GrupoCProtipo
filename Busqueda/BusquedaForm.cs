@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoCProtipo.Busqueda;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace ProtipoCU2yCU4
 {
     public partial class BusquedaForm : Form
     {
+        BusquedaModelo modelo;
+
+
         public BusquedaForm()
         {
             InitializeComponent();
@@ -20,6 +24,11 @@ namespace ProtipoCU2yCU4
         private void CancelarBoton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BusquedaForm_Load(object sender, EventArgs e)
+        {
+            modelo = new BusquedaModelo();
         }
     }
 }

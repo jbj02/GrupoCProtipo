@@ -1,4 +1,5 @@
 using System;
+using GrupoCProtipo.Preparador;
 
 namespace ProtipoCU2yCU4
 {

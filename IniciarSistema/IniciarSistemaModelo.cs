@@ -1,10 +1,8 @@
-﻿using GrupoCProtipo;
-
-namespace GrupoCProtipoCU2yCU4
+﻿namespace GrupoCProtipo.IniciarSistema
 {
     internal class IniciarSistemaModelo
     {
-        public List<Credenciales> CredencialesUsuarios {  get; set; }
+        public List<Credenciales> CredencialesUsuarios { get; set; }
 
         // Creamos un constructor para cargarle datos y probar el prototipo de forma aislada
         public IniciarSistemaModelo()
@@ -20,9 +18,9 @@ namespace GrupoCProtipoCU2yCU4
                 new Credenciales
                 {
                     Usuario = "RominaGuzman",
-                    Clave = "DibuMilo!!!", 
+                    Clave = "DibuMilo!!!",
                     Acceso = "Despachador"
-                }, 
+                },
                 new Credenciales
                 {
                     Usuario = "EstebanJusticia",

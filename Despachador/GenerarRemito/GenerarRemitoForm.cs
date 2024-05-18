@@ -34,5 +34,10 @@ namespace GrupoCProtipoCU2yCU4
             FechaModificacionDT.Value = DateTime.Now;
             EstadoCB.SelectedIndex = 1;
         }
+
+        private void GenerarRemitoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
